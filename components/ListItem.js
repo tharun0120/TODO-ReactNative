@@ -8,12 +8,21 @@ const ListItem = ({ item, deleteItem }) => {
     <TouchableOpacity style={styles.listItem}>
       <View style={styles.listItemView}>
         <Text style="styles.listItemText">{item.text}</Text>
-        <Icon
-          name="remove"
-          size={20}
-          color="firebrick"
-          onPress={() => deleteItem(item.id)}
-        />
+        <View style={styles.buttonGroup}>
+          <Icon
+            style={{ paddingRight: 25 }}
+            name="check"
+            size={20}
+            color="green"
+            onPress={() => console.log("check")}
+          />
+          <Icon
+            name="remove"
+            size={20}
+            color="firebrick"
+            onPress={() => deleteItem(item.id)}
+          />
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -22,9 +31,12 @@ const ListItem = ({ item, deleteItem }) => {
 const styles = StyleSheet.create({
   listItem: {
     padding: 15,
-    backgroundColor: "#f8f8f8",
+    backgroundColor: "steelblue",
     borderBottomWidth: 1,
     borderColor: "#eee",
+    margin: 8,
+    color: "white",
+    borderRadius: 5,
   },
   listItemView: {
     flexDirection: "row",
@@ -33,6 +45,9 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 20,
+  },
+  buttonGroup: {
+    flexDirection: "row",
   },
 });
 

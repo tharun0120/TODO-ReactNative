@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="Shopping List"></Header>
+      <Header title="TODO LIST" />
       <AddItem addItem={addItem} />
       <FlatList
         data={items}

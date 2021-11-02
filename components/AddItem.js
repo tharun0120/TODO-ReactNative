@@ -21,24 +21,25 @@ const AddItem = ({ addItem }) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
-        placeholder="Add Item...."
+        placeholder="ADD A TODO"
         style={styles.input}
         onChangeText={onChange}
         value={text}
       />
       <TouchableOpacity style={styles.btn} onPress={() => add(text)}>
-        <Text style={styles.btnText}>
-          <Icon name="plus" size={20} />
-          Add Item
-        </Text>
+        <Icon style={styles.btnText} name="plus" size={20} />
       </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  constainer: {
+    flex: 1,
+    flexDirection: "row",
+  },
   input: {
     height: 60,
     padding: 8,
@@ -51,11 +52,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#c2bad8",
     padding: 9,
     margin: 5,
+    borderRadius: 4,
   },
   btnText: {
     color: "darkslateblue",
     fontSize: 20,
     textAlign: "center",
+    paddingLeft: 5,
   },
 });
 
